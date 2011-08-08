@@ -1,0 +1,34 @@
+es:
+  activerecord:
+    models:
+      issuer: 'Destinatario'
+    attributes:
+      issuer:
+        code:                 'Clave'
+        irs:                  'I.R.S.'
+        rfc:                  'R.F.C.'
+        curp:                 'C.U.R.P'
+        surname:              'Apellido Paterno'
+        mothers_maiden_name:  'Apellido Materno'
+        name:                 'Nombre'
+        street:               'Calle'
+        ext_number:           'Número Ext.'
+        int_number:           'Número Int.'
+        colonia:              'Colonia'
+        location:             'Localidad'
+        reference:            'Referencias'
+        city:                 'Ciudad'
+        state:                'Estado'
+        country:              'País'
+        postal_code:          'Código Postal'
+
+  links:
+    list: 'Listado'
+    new: 'Agregar'
+  
+  issuers:
+    list: 'Destinatarios'
+    new: 'Agregar Destinatario'
+  
+  headers:
+    actions:  'Operaciones'

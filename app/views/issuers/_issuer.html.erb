@@ -1,0 +1,14 @@
+<fieldset>
+  <%= form_for @issuer do |f| %>
+    <%= f.label :code %>
+    <%= f.text_field :code %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :irs %>
+    <%= f.text_field :irs %>
+
+    <%= f.submit %>
+  <% end %>
+</fieldset>
