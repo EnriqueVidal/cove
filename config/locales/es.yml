@@ -1,7 +1,8 @@
 es:
   activerecord:
     models:
-      issuer: 'Destinatario'
+      issuer: 'Emisor'
+      receiver: 'Destinatario'
     attributes:
       issuer:
         code:                 'Clave'
@@ -14,7 +15,7 @@ es:
         street:               'Calle'
         ext_number:           'Número Ext.'
         int_number:           'Número Int.'
-        colonia:              'Colonia'
+        suburb:               'Colonia'
         location:             'Localidad'
         reference:            'Referencias'
         city:                 'Ciudad'
@@ -22,13 +23,58 @@ es:
         country:              'País'
         postal_code:          'Código Postal'
 
+      receiver:
+        code:                 'Clave'
+        irs:                  'I.R.S.'
+        rfc:                  'R.F.C.'
+        curp:                 'C.U.R.P'
+        surname:              'Apellido Paterno'
+        mothers_maiden_name:  'Apellido Materno'
+        name:                 'Nombre'
+        street:               'Calle'
+        ext_number:           'Número Ext.'
+        int_number:           'Número Int.'
+        suburb:               'Colonia'
+        location:             'Localidad'
+        reference:            'Referencias'
+        city:                 'Ciudad'
+        state:                'Estado'
+        country:              'País'
+        postal_code:          'Código Postal'
+
+  headings:
+    issuers:    'Listado de Emisores'
+    receivers:  'Listado de Destinatarios'
+
   links:
-    list: 'Listado'
-    new: 'Agregar'
-  
-  issuers:
-    list: 'Destinatarios'
-    new: 'Agregar Destinatario'
-  
+    list:   'Listado'
+    new:    'Agregar'
+    edit:   'Modificar'
+    delete: 'Eliminar'
+    create: 'Guardar'
+    update: 'Actualizar'
+    home:   'Inicio'
+
+  issuer:
+    list:     'Listar Emisores'
+    new:      'Agregar Emisor'
+    show:     'Ver'
+    regresar: 'Regresar a Emisores'
+    create:   'Guardar'
+    update:   'Actualizar'
+
+  receiver:
+    list:     'Listar Destinatarios'
+    new:      'Agregar Destinatario'
+    show:     'Ver'
+    regresar: 'Regresar a Destinatarios'
+    create:   'Guardar'
+    update:   'Actualizar'
+
   headers:
     actions:  'Operaciones'
+    create:   'Guardar'
+    update:   'Actualizar'
+
+  messages:
+    success:  'Operación Exitosa.'

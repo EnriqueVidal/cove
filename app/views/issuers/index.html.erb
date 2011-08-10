@@ -1,4 +1,4 @@
-<p>Issuer Index</p>
+<p><%= t 'headings.issuers' %></p>
 
 <table>
   <thead>
@@ -6,15 +6,17 @@
       <th><%= t 'activerecord.attributes.issuer.code' %></th>
       <th><%= t 'activerecord.attributes.issuer.name' %></th>
       <th><%= t 'activerecord.attributes.issuer.irs' %></th>
+      <th><%= t 'activerecord.attributes.issuer.rfc' %></th>
       <th><%= t 'headers.actions'%></th>
     </tr>
   </thead>
   <tbody>
-    <%= @issuers.each do |issuer| %>
+    <% @issuers.each do |issuer| %>
       <tr class="<%= cycle(:odd, :even) %>">
         <td><%= issuer.code %></td>
-        <td><%= issuer.name %></td>
+        <td><%= issuer.name + ' ' + issuer.surname + ' ' + issuer.mothers_maiden_name  %></td>
         <td><%= issuer.irs %></td>
+        <td><%= issuer.rfc %></td>
         <td>
           <%= link_to t('links.edit'), edit_issuer_path( issuer ) %>
           <%= link_to t('links.delete'), issuer_path( issuer ), :method => :delete %>
@@ -25,4 +27,5 @@
 </table>
 
 <%= paginate @issuers %>
-<%= link_to t('issuers.new'), new_issuer_path %>
+<%= link_to t('issuer.new'), new_issuer_path %>
+<%= link_to t('links.home'), root_path %>

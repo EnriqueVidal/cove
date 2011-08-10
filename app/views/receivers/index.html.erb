@@ -1,0 +1,31 @@
+<p><%= t 'headings.receivers' %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t 'activerecord.attributes.receiver.code' %></th>
+      <th><%= t 'activerecord.attributes.receiver.name' %></th>
+      <th><%= t 'activerecord.attributes.receiver.irs' %></th>
+      <th><%= t 'activerecord.attributes.receiver.rfc' %></th>
+      <th><%= t 'headers.actions'%></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @receivers.each do |receiver| %>
+      <tr class="<%= cycle(:odd, :even) %>">
+        <td><%= receiver.code %></td>
+        <td><%= receiver.name + ' ' + receiver.surname + ' ' + receiver.mothers_maiden_name  %></td>
+        <td><%= receiver.irs %></td>
+        <td><%= receiver.rfc %></td>
+        <td>
+          <%= link_to t('links.edit'), edit_receiver_path( receiver ) %>
+          <%= link_to t('links.delete'), receiver_path( receiver ), :method => :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>  
+</table>
+
+<%= paginate @receivers %>
+<%= link_to t('receiver.new'), new_receiver_path %>
+<%= link_to t('links.home'), root_path %>

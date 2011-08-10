@@ -24,5 +24,6 @@ group :test, :development do
 end
 
 group :production do
-  gem 'mysql2'
+  gem 'ruby-oci8'
+  gem 'activerecord-oracle_enhanced-adapter', :require => 'oci8'
 end

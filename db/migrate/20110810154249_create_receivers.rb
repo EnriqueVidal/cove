@@ -1,6 +1,6 @@
-class CreateIssuers < ActiveRecord::Migration
+class CreateReceivers < ActiveRecord::Migration
   def self.up
-    create_table :issuers do |t|
+    create_table :receivers do |t|
       t.string :code,                :limit => 10,  :null => false
       t.string :irs,                 :limit => 50
       t.string :rfc,                 :limit => 13,  :null => false
@@ -17,13 +17,13 @@ class CreateIssuers < ActiveRecord::Migration
       t.string :city,                :limit => 50
       t.string :state,               :limit => 3
       t.string :country,             :limit => 13
-      t.integer :postal_code 
+      t.integer :postal_code       
 
       t.timestamps
     end
   end
 
   def self.down
-    drop_table :issuers
+    drop_table :receivers
   end
 end

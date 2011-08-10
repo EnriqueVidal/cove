@@ -34,4 +34,27 @@ class IssuerTest < ActiveSupport::TestCase
     assert issuer = Factory.build( :issuer, :name => @issuer.name )
     assert issuer.invalid?
   end
+  
+  test "irs must be unique" do
+    assert issuer = Factory.build( :issuer, :irs => @issuer.irs )
+    assert issuer.invalid?
+  end
+  
+  test "can create issuers" do
+    assert_difference "Issuer.count" do
+      assert Factory.create( :issuer )
+    end
+  end
+  
+  test "can update issuers" do
+    assert @issuer.name = "new custom name"
+    assert @issuer.valid?
+    assert @issuer.save
+  end
+  
+  test "can delete issuers" do
+    assert_difference "Issuer.count", -1 do
+      @issuer.delete
+    end
+  end
 end
